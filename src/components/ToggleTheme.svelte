@@ -63,7 +63,7 @@
     {/if}
   </button>
 {:else}
-  <div class={classes}>
+  <div class={className}>
     <div class="w-5 h-5" />
   </div>
 {/if}
