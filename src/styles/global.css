@@ -1,0 +1,10 @@
+@tailwind base;
+
+html,
+body {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@tailwind components;
+@tailwind utilities;

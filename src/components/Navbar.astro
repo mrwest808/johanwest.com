@@ -1,0 +1,21 @@
+---
+import Logo from './Logo.astro';
+import GitHubIcon from './icons/GitHubIcon.astro';
+import TwitterIcon from './icons/TwitterIcon.astro';
+import ToggleTheme from './ToggleTheme.svelte'
+---
+
+<header class="p-4 flex items-center justify-between text-black dark:text-white">
+	<a href="/">
+		<Logo className="ml-1 w-10 h-10" />
+	</a>
+	<nav class="flex items-center space-x-1">
+		<a class="p-2" href="https://twitter.com/jaywest808" target="_blank" rel="noopener noreferrer" title="Go to Twitter">
+			<TwitterIcon className="w-5 h-5" />
+			</a>
+		<a class="p-2" href="https://github.com/mrwest808" target="_blank" rel="noopener noreferrer" title="Go to GitHub">
+			<GitHubIcon className="w-5 h-5" />
+		</a>
+		<ToggleTheme className="p-2 ml-1" client:idle />
+	</nav>
+</header>

@@ -1,0 +1,30 @@
+---
+// setup: |
+//   import Logo from '../components/Logo.astro'
+// 	import Hint from '../components/Hint.svelte'
+// layout: ../layouts/BaseLayout.astro
+// title: Index
+// draft: false
+import { Markdown } from 'astro/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SeveralYears from '../components/SeveralYears.svelte';
+---
+
+<BaseLayout>
+	<Markdown>
+		<h1 class="sr-only">Johan West</h1>
+
+		<img src="/assets/animoji.png" class="w-40 h-40 mx-auto">
+
+		Hello there 👋
+
+		I am a versatile software developer based in Stockholm, Sweden.
+
+		<p>My core expertise leans towards the front-end side of web development. I've worked within the Node.js ecosystem for <SeveralYears client:idle />.</p>
+
+		I'm passionate about creating great experiences, whether for product users or other developers.
+
+		Regards,<br>
+		Johan West
+	</Markdown>
+</BaseLayout>
