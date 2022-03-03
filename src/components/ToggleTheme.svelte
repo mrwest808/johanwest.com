@@ -67,3 +67,5 @@
     <div class="w-5 h-5" />
   </div>
 {/if}
+
+<slot />

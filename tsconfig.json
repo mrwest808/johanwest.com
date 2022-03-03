@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "moduleResolution": "node",
+    "paths": {
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"]
+    },
     "strict": true
   },
   "include": ["src/**/*"]

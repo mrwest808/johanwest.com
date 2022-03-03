@@ -8,3 +8,11 @@ body {
 
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-background: 30deg 20% 95%;
+}
+
+.dark {
+  --color-background: 214deg 9% 15%;
+}

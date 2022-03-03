@@ -1,3 +1,12 @@
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `hsl(var(${variable}))`
+    }
+    return `hsl(var(${variable}) / ${opacityValue})`
+  }
+}
+
 module.exports = {
   content: [
     './public/**/*.html',
@@ -9,6 +18,9 @@ module.exports = {
       sans: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
     },
     extend: {
+      colors: {
+        background: withOpacityValue('--color-background'),
+      },
       typography: {
         DEFAULT: {
           css: {

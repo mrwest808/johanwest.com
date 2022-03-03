@@ -33,10 +33,19 @@ const { title = 'johanwest.com' } = Astro.props;
 		<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
 	</head>
 
-	<body class="bg-white dark:bg-[hsl(214deg,9%,15%)]">
+	<body class="bg-background">
 		<Navbar />
-		<main class="mx-auto pb-12 pt-2 lg:pt-12 px-4 prose dark:prose-invert">
+		<main class="mx-auto pb-12 pt-8 lg:pt-12 px-4 prose dark:prose-invert">
 			<slot />
 		</main>
 	</body>
 </html>
+
+<style>
+	:global(.astro-code) {
+		@apply -mx-4 sm:mx-0;
+		@apply px-4 py-4 sm:py-3;
+		@apply rounded-none sm:rounded-md;
+		/* @apply text-base; */
+	}
+</style>

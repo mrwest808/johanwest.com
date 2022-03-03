@@ -1,30 +1,36 @@
 ---
-// setup: |
-//   import Logo from '../components/Logo.astro'
-// 	import Hint from '../components/Hint.svelte'
-// layout: ../layouts/BaseLayout.astro
-// title: Index
-// draft: false
-import { Markdown } from 'astro/components';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SeveralYears from '../components/SeveralYears.svelte';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Link from '../components/Link.svelte'
 ---
 
 <BaseLayout>
-	<Markdown>
-		<h1 class="sr-only">Johan West</h1>
-
-		<img src="/assets/animoji.png" class="w-40 h-40 mx-auto">
-
-		Hello there 👋
-
-		I am a versatile software developer based in Stockholm, Sweden.
-
-		<p>My core expertise leans towards the front-end side of web development. I've worked within the Node.js ecosystem for <SeveralYears client:idle />.</p>
-
-		I'm passionate about creating great experiences, whether for product users or other developers.
-
-		Regards,<br>
-		Johan West
-	</Markdown>
+  <h1 class="sr-only">Johan West</h1>
+  <img src="/assets/animoji3.png" alt="animoji" class="w-40 h-40 mx-auto" />
+  <p>Hello there!</p>
+  <p>
+    I'm a versatile software developer based in Stockholm, Sweden <span
+      role="img"
+      aria-label="flag of sweden">🇸🇪</span
+    >
+  </p>
+  <p>
+    My core expertise leans towards the front-end side of web development,
+    although I am comfortable across the stack. I've worked within the Node.js
+    ecosystem since 2014.
+  </p>
+  <p>
+    I'm equally passionate about creating great user experiences as developer
+    experiences. Whenever I have some downtime I often find myself tinkering
+    with internal tooling to make the work day of myself and my colleagues more
+    convenient.
+  </p>
+  <p>
+    You can find me on <Link external href="https://github.com/mrwest808"
+      >GitHub</Link
+    > and <Link external href="https://twitter.com/jaywest808">Twitter</Link>.
+  </p>
+  <p>
+    Regards<br />
+    Johan West
+  </p>
 </BaseLayout>
