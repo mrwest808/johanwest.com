@@ -1,51 +1,58 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Navbar from '../components/Navbar.astro'
 
 export interface Props {
-	title?: string;
+  title?: string
 }
 
-const { title = 'johanwest.com' } = Astro.props;
+const { title = 'johanwest.com' } = Astro.props as Props
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-		<script>
-			try {
-				if (
-					localStorage.theme === "dark" ||
-					(!("theme" in localStorage) &&
-						window.matchMedia("(prefers-color-scheme: dark)").matches)
-				) {
-					document.documentElement.classList.add("dark");
-				} else {
-					document.documentElement.classList.remove("dark");
-				}
-			} catch (_) {}
-		</script>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
-		<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="mask-icon" href="/mask-icon.svg" color="#000000" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <script>
+      try {
+        if (
+          localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      } catch (_) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')} />
+  </head>
 
-	<body class="bg-background">
-		<Navbar />
-		<main class="mx-auto pb-12 pt-8 lg:pt-12 px-4 prose dark:prose-invert">
-			<slot />
-		</main>
-	</body>
+  <body class="bg-background">
+    <Navbar />
+    <main class="mx-auto pb-12 pt-8 lg:pt-12 px-4 prose dark:prose-invert">
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style>
-	:global(.astro-code) {
-		@apply -mx-4 sm:mx-0;
-		@apply px-4 py-4 sm:py-3;
-		@apply rounded-none sm:rounded-md;
-		/* @apply text-base; */
-	}
+  :global(.astro-code) {
+    @apply -mx-4 sm:mx-0;
+    @apply px-4 py-4 sm:py-3;
+    @apply rounded-none sm:rounded-md;
+    /* @apply text-base; */
+  }
 </style>
