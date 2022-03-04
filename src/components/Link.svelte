@@ -7,7 +7,7 @@
   export let href: string
 
   $: classes = classNames(
-    'underline decoration-wavy decoration-indigo-400 underline-offset-[5px]',
+    'underline decoration-wavy decoration-indigo-500 dark:decoration-indigo-400 underline-offset-[0.3125rem]',
     external && 'inline-flex items-center',
     className,
   )
