@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/special",
+      "destination": "https://jwlifeos.notion.site/Pizza-Johan-Special-0ea9fe47c5834106a1032fdee2419281"
+    }
+  ]
+}
